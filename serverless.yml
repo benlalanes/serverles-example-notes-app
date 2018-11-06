@@ -54,11 +54,12 @@ functions:
     # - method: GET request
     handler: get.main
     events:
-      - http:
-        path: notes/{id}
-        method: get
-        cors: true
-        authorizer: aws_iam
+      - 
+        http:
+          path: notes/{id}
+          method: get
+          cors: true
+          authorizer: aws_iam
   
   list:
     # Defines an HTTP API endpoint that calls the main function in list.js
@@ -70,5 +71,23 @@ functions:
         http:
           path: notes
           method: get
+          cors: true
+          authorizer: aws_iam
+  update:
+    handler: update.main
+    events:
+      -
+        http:
+          path: notes
+          method: put
+          cors: true
+          authorizer: aws_iam
+  delete:
+    handler: delete.main
+    events:
+      - 
+        http:
+          path: notes/{id}
+          method: delete
           cors: true
           authorizer: aws_iam
