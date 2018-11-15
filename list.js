@@ -15,6 +15,6 @@ export async function main(event, context) {
 
     return success(result.Items);
   } catch (e) {
-    return failure({ status: false });
+    return failure({ message: e.name + ": " + e.message });
   }
 }
