@@ -78,7 +78,7 @@ functions:
     events:
       -
         http:
-          path: notes
+          path: notes/{id}
           method: put
           cors: true
           authorizer: aws_iam
